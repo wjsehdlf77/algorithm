@@ -5,12 +5,18 @@ from sys import stdin
 #bottom-up
 
 def route(N, M):
-    candy = 0
-    for m in range(M):
-        candy += max(column[m + 1][m], column[m][m + 1], column[m + 1][m + 1])
 
-    return candy
-        
+    dp = [[0] * (M + 1)] * (N + 1)
+    for n in range(1, N + 1):
+        for m in range(1, M + 1):
+            dp[n][m] = max(dp[n -1][m], dp[n][m - 1], dp[n - 1][m - 1]) + column[n-1][m-1]
+    return dp[N][M]
+    
 N, M = map(int, stdin.readline().split())
+
 column = [list(map(int, stdin.readline().split())) for _ in range(N)]
+
 print(route(N, M))
+
+
+
