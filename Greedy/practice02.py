@@ -1,4 +1,4 @@
-#그리디 큰수의 법칙
+#그리디 큰수의 법칙 greedy
 
 from sys import stdin
 from time import time

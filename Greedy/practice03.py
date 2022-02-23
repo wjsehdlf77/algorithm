@@ -1,4 +1,4 @@
-#숫자 카드 게임
+#숫자 카드 게임 greedy
 
 from sys import stdin
 from time import time
