@@ -3,6 +3,9 @@
 # 500원 100원 50원 10원 최소한으로 거스름돈을 줘라
 
 from sys import stdin
+
+#내가 푼 부분
+
 # N = int(stdin.readline())
 
 # count = 0
@@ -24,6 +27,8 @@ from sys import stdin
 #     count += 1
 
 # print(count)
+
+#책 정답
 
 N = int(stdin.readline())
 
