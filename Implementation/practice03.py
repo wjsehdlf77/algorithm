@@ -2,4 +2,27 @@
 
 from sys import stdin
 
-column, row = stdin.readline().split()
+data = list(map(str, stdin.readline().rstrip()))
+data[1] = int(data[1])
+
+row = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+column = [1, 2, 3, 4, 5, 6, 7, 8]
+
+r_num = row.index(data[0])
+c_num = column.index(data[1])
+
+steps = [(-2, -1), (-2, 1), (-1, -2), (1, -2), (2, -1), (2, 1), (-1, 2), (1, 2)]
+
+count = 0
+
+for r, c in steps:
+    nr = r_num + r
+    nc = c_num + c
+    if nr >= 8 or nc >= 8 or nr < 0 or nc < 0:
+        continue
+    count += 1
+
+print(count)
+
+
+
