@@ -28,26 +28,47 @@ from sys import stdin
         
 
 
+# N = int(stdin.readline())
+
+# adventurers = list(map(int, stdin. readline().split()))
+
+# adventurers.sort()
+
+# group = 0
+
+# count = 0
+
+# for i in adventurers:
+#     count += 1
+#     if count >= i:
+#         group += 1
+#         count = 0
+# print(group)
+
+
+# 5
+# 2 3 1 2 2
+
+# 7
+# 1 1 2 2 2 2 3 3
+
+
 N = int(stdin.readline())
 
-adventurers = list(map(int, stdin. readline().split()))
+data = list(map(int, stdin.readline().split()))
 
-adventurers.sort()
+data.sort()
 
 group = 0
 
 count = 0
 
-for i in adventurers:
-    count += 1
-    if count >= i:
-        group += 1
-        count = 0
-print(group)
+for d in data:
+    group += 1
 
+    if group == d:
+        count += 1
+        group = 0
 
-# 6
-# 2 3 1 4 5 2
+print(count)
 
-# 7
-# 1 1 2 2 2 2 3 3
