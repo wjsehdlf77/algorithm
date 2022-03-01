@@ -1,18 +1,4 @@
-#음료수 얼려먹기
-
-from sys import stdin
-
-N, M = map(int, stdin.readline().split())
-data = []
-for _ in range(N):
-    a = [int(n) for n in str(stdin.readline().rstrip())]
-    data.append(a)
-
-
-
-
-
-# 15 14 
+15 14 
 # 00000111100000 
 # 11111101111110 
 # 11011101101110 

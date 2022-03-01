@@ -1,6 +1,4 @@
-#DFS(Depth-First-Search)
-
-#인접행렬
+# 인접행렬
 
 INF = 999999999
 
@@ -24,3 +22,6 @@ graph[1].append((0, 7))
 graph[2]. append((0, 5))
 
 print(graph)
+
+
+
