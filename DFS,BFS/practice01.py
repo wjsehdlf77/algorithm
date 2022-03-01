@@ -8,6 +8,43 @@ for _ in range(N):
     a = [int(n) for n in str(stdin.readline().rstrip())]
     data.append(a)
 
+def dfs(x, y):
+    if y <= -1 or x <= -1 or x >= N or y >= M:
+        return False
+    
+    if data[x][y] == 0:
+        data[x][y] = 1
+
+        dfs(x + 1, y)
+        dfs(x - 1, y)
+        dfs(x, y + 1)
+        dfs(x, y - 1)
+        return True
+    return False
+
+result = 0
+for i in range(N):
+    for j in range(M):
+        if dfs(i, j) == True:
+            result += 1
+print(result)
+
+
+    
+    
+
+
+
+
+
+    
+    
+    
+    
+
+
+
+
 
 
 
