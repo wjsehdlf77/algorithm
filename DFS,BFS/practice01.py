@@ -14,7 +14,7 @@ def dfs(x, y):
     
     if data[x][y] == 0:
         data[x][y] = 1
-
+        print(data[x], y)
         dfs(x + 1, y)
         dfs(x - 1, y)
         dfs(x, y + 1)
