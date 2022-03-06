@@ -54,6 +54,8 @@ def bfs(x, y):
 
     return data[N - 1][M - 1]
 
+    
+
 
 print(bfs(0, 0))
 
