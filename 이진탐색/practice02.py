@@ -50,6 +50,36 @@ from sys import stdin
 # print(max_height(data, 0, max(data), M))
 
 
+N, M = map(int, stdin.readline().split())
+
+data = list(map(int, stdin.readline().split()))
+
+data.sort()
+
+start = 0
+
+end = max(data)
+
+result = 0
+
+while (start <= end):
+    total = 0
+    mid = (start + end) // 2
+
+    for x in data:
+
+        if x > mid:
+            total += (x- mid)
+    if total < M:
+        end = mid - 1
+    else:
+        result = mid
+        start = mid + 1
+
+print(result)
+
+
+
 
 
 
