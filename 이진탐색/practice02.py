@@ -24,30 +24,32 @@ from sys import stdin
 
 # print(max_height(data, max_data, M))
 
+#이진탐색 재귀형식으로 구현했지만 M값이 딱 나누어 떨어지지 않는 경우는 0이 리턴된다 
+# def max_height(array, start, end, client):
+#     if start > end:
+#         return 0
+#     mid = (start + end) // 2
 
-def max_height(array, start, end, client):
-    if start > end:
-        return 0
-    mid = (start + end) // 2
-
-    lambda_height = lambda x : x- mid if x > mid else 0
-    sum_height = sum(map(lambda_height, array))
+#     lambda_height = lambda x : x- mid if x > mid else 0
+#     sum_height = sum(map(lambda_height, array))
     
-    if sum_height == client:
-        return mid
-    elif sum_height > client:
-        return max_height(array, mid + 1, end, client)
-    else:
-        return max_height(array, start, mid - 1, client)
+#     if sum_height == client:
+#         return mid
+#     elif sum_height > client:
+#         return max_height(array, mid + 1, end, client)
+#     else:
+#         return max_height(array, start, mid - 1, client)
     
 
-N, M = map(int, stdin.readline().split())
+# N, M = map(int, stdin.readline().split())
 
-data = list(map(int, stdin.readline().split()))
+# data = list(map(int, stdin.readline().split()))
 
-data.sort()
+# data.sort()
 
-print(max_height(data, 0, max(data), M))
+# print(max_height(data, 0, max(data), M))
+
+
 
 
 
