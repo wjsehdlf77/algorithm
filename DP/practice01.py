@@ -2,20 +2,22 @@
 
 from sys import stdin
 
-def one(x):
-    if x == 1:
-        return 1
-    if x % 1 != 0:
-        return 
-    return min(one(x/5), one(x/3), one(x/2), one(x - 1))
-
-   
-    
+dp = [0] * 11
 
 X = int(stdin.readline())
 
+for i in range(2, X + 1):
+    
+    dp[i] = dp[i-1] + 1
+    if i % 2 == 0:
+        dp[i] = min(dp[i], dp[i//2] + 1)
+    if i % 3 == 0:
+        dp[i] = min(dp[i], dp[i//3] + 1)
+    if i % 5 == 0:
+        dp[i] = min(dp[i], dp[i//5] + 1)
+    print(dp)
+print(dp[X])
 
-print(one(X))
 
 
     
