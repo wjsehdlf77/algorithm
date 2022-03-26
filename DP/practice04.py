@@ -18,7 +18,7 @@ for i in data:
     for j in range(i, M + 1):
         if d[j - i] != 10001:
             d[j] = min(d[j], d[j - i] + 1)
-    print(d)
+
             
 
 if d[M] == 10001:
