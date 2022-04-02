@@ -4,6 +4,9 @@
 #x = 방문판매회사 k = 소개팅회사
 # 1 -> k -> x 가장 빠른 길
 
+
+#내가 푼 다익스트라 방법
+import heapq
 from sys import stdin
 
 input = stdin.readline
@@ -24,11 +27,38 @@ for _ in range(m):
         graph[route2].append(route1)
 
 
-end, first = map(int, input().split())
+x, k = map(int, input().split())
 
-def K(start = 1):
+
+def company_route(start = 1):
     q = []
+    heapq.heappush(q, (0, start))
+    distance[start] = 0
     
+    while q:
+        dist, now = heapq.heappop(q)
+        if dist > distance[now]:
+            continue
+
+        for i in graph[now]:
+            cost = dist + 1
+
+            if cost < distance[i]:
+                distance[i] = cost
+                heapq.heappush(q, (cost, i))
+
+
+company_route()
+first = distance[k]
+company_route(k)
+end = distance[x]
+
+if  (first + end) < INF:
+    print(first + end)
+else:
+    print(-1) 
+
+
 
 
 
