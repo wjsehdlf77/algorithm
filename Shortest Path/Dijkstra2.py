@@ -23,9 +23,6 @@ start = int(input())
 #각 노드의 연결된 정보
 graph = [[] for _ in range(n + 1)]
 
-#방문 체크
-visited = [False] * (n + 1)
-
 #최단 고리 테이블을 모두 무한으로 초기화
 distance = [INF] * (n + 1)
 
