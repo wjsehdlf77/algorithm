@@ -2,6 +2,7 @@
 
 from collections import deque
 from sys import stdin
+import copy
 
 n = int(stdin.readline())
 
@@ -15,34 +16,37 @@ for i in range(1, n + 1):
     data = list(map(int, stdin.readline().split()))
 
     num_time[i] = data[0]
+
     for x in data[1 : -1]:    
-        graph[i].append(x)
-        indegree[x] += 1      
+        graph[x].append(i)
+        indegree[i] += 1      
 
-def topology(a= 0):
+def topology_sort():
 
-    max_time = 0
+    result = copy.deepcopy(num_time)
     q = deque()
 
-    for i in indegree:
-        if i == 0:
+    for i in range(1, n + 1):
+        if indegree[i] == 0:
             q.append(i)
 
     while q:
+
         now = q.popleft()
+
         for i in graph[now]:
+            result[i] = max(result[i], result[now] + num_time[i])
             indegree[i] -= 1
-            max_time = max(num_time[i], max_time)
+
             if indegree[i] == 0:
                 q.append(i)
-        a += max_time
-        max_time = 0
 
-time = 0
+    for i in range(1, n + 1):
+        print(result[i])
 
-topology(time)
+topology_sort()
 
-print(time)
+
 
 
 
