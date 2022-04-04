@@ -26,8 +26,31 @@ def union_house(villege, house1, house2):
         villege[house2] = house1
 
 
-result = []
+# result = []
+# edges = []
+
+# for _ in range(m):
+#     house1, house2, cost = map(int, input().split())
+
+#     edges.append((cost, house1, house2))
+
+# edges.sort()
+
+# for edge in edges:
+#     cost, house1, house2 = edge
+
+#     if find_villege(villege, house1) != find_villege(villege, house2):
+#         union_house(villege, house1, house2)
+#         result.append(cost)
+
+# result.remove(max(result))
+
+# print(sum(result))
+
+
+result = 0
 edges = []
+last = 0
 
 for _ in range(m):
     house1, house2, cost = map(int, input().split())
@@ -41,11 +64,10 @@ for edge in edges:
 
     if find_villege(villege, house1) != find_villege(villege, house2):
         union_house(villege, house1, house2)
-        result.append(cost)
+        result += cost
+        last = cost
 
-result.remove(max(result))
-
-print(sum(result))
+print(result - last)
 
 
 
